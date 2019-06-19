@@ -201,7 +201,7 @@
       <artifactId>log4j</artifactId>
       <version>1.2.14</version>
     </dependency>
-
+      <!--use mysql8 for mysql-connector-java version 8+, or error:SQLException: BigInteger to Long-->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
