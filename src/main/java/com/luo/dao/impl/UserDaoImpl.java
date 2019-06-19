@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Repository("userDaoImpl")
 public class UserDaoImpl implements UserDao {
 
     @Resource(name = "myJdbc")//javax
@@ -46,7 +46,7 @@ public class UserDaoImpl implements UserDao {
         String sql = "update user set name = ? where id = ?";
         int result = myJdbc.update(sql, name, id);
 
-        return result!=0;
+        return result != 0;
     }
 
     @Override
