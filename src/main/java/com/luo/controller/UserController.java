@@ -52,4 +52,10 @@ public class UserController {
         User u = new User(3, "ty", 6);
         return userDao.updateUser(u.getId()+"", u.getName());
     }
+
+    @RequestMapping(value = "deleteOne", method = RequestMethod.DELETE)
+    @ResponseBody
+    public boolean deleteUser() {
+        return userDao.deleteUser(3 + "");
+    }
 }
