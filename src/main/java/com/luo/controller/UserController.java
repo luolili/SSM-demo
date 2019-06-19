@@ -45,4 +45,11 @@ public class UserController {
         User u = new User(3, "huy", 6);
         return userDao.addUser(u);
     }
+
+    @RequestMapping(value = "updateOne", method = RequestMethod.PUT)
+    @ResponseBody
+    public boolean updateUser() {
+        User u = new User(3, "ty", 6);
+        return userDao.updateUser(u.getId()+"", u.getName());
+    }
 }

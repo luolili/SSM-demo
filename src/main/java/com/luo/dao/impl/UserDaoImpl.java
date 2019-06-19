@@ -43,7 +43,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean updateUser(String id, String name) {
-        return false;
+        String sql = "update user set name = ? where id = ?";
+        int result = myJdbc.update(sql, name, id);
+
+        return result!=0;
     }
 
     @Override
