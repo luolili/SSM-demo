@@ -27,7 +27,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getUser(String id) {
-        return null;
+        String sql = "select * from user where id="+id;
+        return queryById(sql);
     }
 
     @Override
@@ -70,5 +71,23 @@ public class UserDaoImpl implements UserDao {
             }
         });
         return userList;
+    }
+
+
+    private User queryById(String sql) {
+        final User[] u = new User[1];
+        myJdbc.query(sql, new RowCallbackHandler() {
+            @Override
+            public void processRow(ResultSet resultSet) throws SQLException {
+                int id = resultSet.getInt(1);
+
+                String name = resultSet.getString(2);
+                int age = resultSet.getInt(3);
+                User user = new User(id, name, age);
+                u[0] = user;
+            }
+        });
+
+        return u[0];
     }
 }

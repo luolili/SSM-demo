@@ -32,5 +32,12 @@ public class UserController {
         return userDao.getAllUsers();
     }
 
+    @RequestMapping(value = "getOne", method = RequestMethod.GET)
+    @ResponseBody
+    public User getUser(String id)
+    {
+        
+        return userDao.getUser(id);
+    }
 
 }
