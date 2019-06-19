@@ -34,10 +34,15 @@ public class UserController {
 
     @RequestMapping(value = "getOne", method = RequestMethod.GET)
     @ResponseBody
-    public User getUser(String id)
-    {
-        
+    public User getUser(String id) {
+
         return userDao.getUser(id);
     }
 
+    @RequestMapping(value = "saveOne", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean addUser() {
+        User u = new User(3, "huy", 6);
+        return userDao.addUser(u);
+    }
 }

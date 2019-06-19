@@ -32,8 +32,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean addUser(User userModel) {
-        return false;
+    public boolean addUser(User user) {
+
+        String sql = "insert into user values(?,?,?)";
+
+        int result = myJdbc.update(sql,user.getId(),user.getName(),user.getAge());
+
+        return result != 0;
     }
 
     @Override
@@ -90,4 +95,6 @@ public class UserDaoImpl implements UserDao {
 
         return u[0];
     }
+
+    
 }
