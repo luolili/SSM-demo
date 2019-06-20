@@ -23,7 +23,7 @@ public class UserController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        return "hello";
+        return "user/hello";
     }
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
