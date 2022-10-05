@@ -24,7 +24,7 @@
     <struts.version>2.3.24</struts.version>
     <org.slf4j.version>1.6.1</org.slf4j.version>
 
-    <jackson.version>2.7.9.4</jackson.version>
+    <jackson.version>2.12.6.1</jackson.version>
   </properties>
 
   <dependencies>
